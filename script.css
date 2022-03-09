@@ -1,0 +1,13 @@
+*{
+    padding:0;
+    margin:0;
+}
+#chave{
+    width:200px;
+}
+#ligada{
+    width:200px
+}
+body{
+    background-color: rgb(65, 65, 65);
+}
