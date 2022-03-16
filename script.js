@@ -2,6 +2,10 @@ let body = document.querySelector('body')
 
 let section=document.createElement('section')
 
+let h1=document.createElement('h1')
+txt=document.createTextNode('Clique no interruptor!')
+h1.append(txt)
+
 let divInt=document.createElement('div')
 
 let chave=document.createElement('img')
@@ -10,27 +14,26 @@ chave.setAttribute('id','chave')
 
 let divLamp=document.createElement('div')
 
-let lampOn=document.createElement('img')
-lampOn.setAttribute('src', 'Imagens/lampadaLigada.png')
-lampOn.setAttribute('id','ligada')
+let lampada=document.createElement('img')
+lampada.setAttribute('src', 'Imagens/lampadaDesligada.png')
+lampada.setAttribute('id','lampada')
 
-let lampOff;
-
-divLamp.append(lampOn)
+divLamp.append(lampada)
 divInt.append(chave)
+section.append(h1)
 section.append(divLamp)
 section.append(divInt)
 body.append(section)
 
 document.querySelector('#chave').onclick=function(){
-    if(divLamp=='Imagens/lampadaLigada.png'){
-    divLamp.innerHTML='imagens/lampadaDesligada.png'
-    section.append(divLamp)
-    body.append(section)
+    if(lampada.src.match('Imagens/lampadaDesligada.png')){
+        lampada.removeAttribute('src','Imagens/lampadaDesligada.png')
+        lampada.setAttribute('src', 'Imagens/lampadaLigada.png')
+        section.style.backgroundColor='#EED19C'
     }
     else{
-        divLamp.append(lampOn)
-        section.append(divLamp)
-        body.append(section)
+        lampada.removeAttribute('src','Imagens/lampadaLigada.png')
+        lampada.setAttribute('src', 'Imagens/lampadaDesligada.png')
+        section.style.backgroundColor='#03010D'
     }
 }
