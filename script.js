@@ -9,7 +9,7 @@ h1.append(txt)
 let divInt=document.createElement('div')
 
 let chave=document.createElement('img')
-chave.setAttribute('src','Imagens/interruptor.png' )
+chave.setAttribute('src','Imagens/interruptor-off.png' )
 chave.setAttribute('id','chave')
 
 let divLamp=document.createElement('div')
@@ -29,11 +29,15 @@ document.querySelector('#chave').onclick=function(){
     if(lampada.src.match('Imagens/lampadaDesligada.png')){
         lampada.removeAttribute('src','Imagens/lampadaDesligada.png')
         lampada.setAttribute('src', 'Imagens/lampadaLigada.png')
+        chave.removeAttribute('src','Imagens/interruptor-off.png')
+        chave.setAttribute('src','Imagens/interruptor-on.png' )
         section.style.backgroundColor='#EED19C'
     }
     else{
         lampada.removeAttribute('src','Imagens/lampadaLigada.png')
         lampada.setAttribute('src', 'Imagens/lampadaDesligada.png')
+        chave.removeAttribute('src','Imagens/interruptor-on.png')
+        chave.setAttribute('src','Imagens/interruptor-off.png' )
         section.style.backgroundColor='#03010D'
     }
 }
